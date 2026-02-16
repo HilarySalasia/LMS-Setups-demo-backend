@@ -1,0 +1,1451 @@
+{
+  "steps": [
+    {
+      "step_number": 1,
+      "step_title": "Login",
+      "action": "User logs in to the TurnQuest application.",
+      "navigation": "User is on the TurnQuest login screen.",
+      "system_response": "System validates login credentials and redirects user to the main application screen.",
+      "form_fields": [],
+      "triggering_action": "LoginValidation",
+      "conditional_validation": "",
+      "design_elements": [
+        "Login Form",
+        "Main Application Screen"
+      ]
+    },
+    {
+      "step_number": 2,
+      "step_title": "Navigate to Commission Payments",
+      "action": "User navigates to the 'Accounts' module.",
+      "navigation": "User is on the main application screen.",
+      "system_response": "System displays the 'Accounts' module with a list of sublinks, including 'Commission Payments'.",
+      "form_fields": [],
+      "triggering_action": "Navigation",
+      "conditional_validation": "",
+      "design_elements": [
+        "Main Navigation Panel",
+        "Accounts Module",
+        "Commission Payments Sublink"
+      ]
+    },
+    {
+      "step_number": 3,
+      "step_title": "Select Action: Prepare Payments",
+      "action": "User selects 'Prepare Payments' from the 'Select an Action' dropdown.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System updates the 'Select an Action' field with the selected option and prepares the UI for preparing commission payments.",
+      "form_fields": [],
+      "triggering_action": "UpdateAction",
+      "conditional_validation": "",
+      "design_elements": [
+        "Select an Action Dropdown"
+      ]
+    },
+    {
+      "step_number": 4,
+      "step_title": "Enter Search Criteria",
+      "action": "User enters the date range, product, account type, and agent for the search.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System displays input fields for entering the search criteria and updates the session variables with the entered values.",
+      "form_fields": [
+        {
+          "field_name": "Date From",
+          "field_type": "Calendar",
+          "description": "User selects the start date."
+        },
+        {
+          "field_name": "Date To",
+          "field_type": "Calendar",
+          "description": "User selects the end date."
+        },
+        {
+          "field_name": "Product",
+          "field_type": "Dropdown",
+          "description": "User selects the product from a popup table."
+        },
+        {
+          "field_name": "Account Type",
+          "field_type": "Dropdown",
+          "description": "User selects the account type from a popup table."
+        },
+        {
+          "field_name": "Agent",
+          "field_type": "Dropdown",
+          "description": "User selects the agent/broker from a popup table."
+        }
+      ],
+      "triggering_action": "SearchCommissions",
+      "conditional_validation": "",
+      "design_elements": [
+        "Date Range Input Fields",
+        "Product Popup",
+        "Account Type Popup",
+        "Agent Popup",
+        "Search Button"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "4.1",
+          "sub_step_title": "Open Product Popup",
+          "action": "User clicks the Product Dropdown to open the popup table.",
+          "navigation": "User is on the 'Commission Payment Processing' screen.",
+          "system_response": "System displays the popup table with available products.",
+          "form_fields": [],
+          "triggering_action": "OpenProductPopup",
+          "conditional_validation": "",
+          "design_elements": [
+            "Product Dropdown"
+          ]
+        },
+        {
+          "sub_step_number": "4.2",
+          "sub_step_title": "Select Product from Table",
+          "action": "User selects a product from the table.",
+          "navigation": "User is on the 'Product Popup' screen.",
+          "system_response": "System updates the session variable with the selected product code.",
+          "form_fields": [],
+          "triggering_action": "SelectProduct",
+          "conditional_validation": "",
+          "design_elements": [
+            "Product Table"
+          ]
+        },
+        {
+          "sub_step_number": "4.3",
+          "sub_step_title": "Close Product Popup",
+          "action": "User closes the product popup.",
+          "navigation": "User is on the 'Product Popup' screen.",
+          "system_response": "System closes the popup and returns the user to the 'Commission Payment Processing' screen.",
+          "form_fields": [],
+          "triggering_action": "CloseProductPopup",
+          "conditional_validation": "",
+          "design_elements": [
+            "Close Button (Popup)"
+          ]
+        },
+        {
+          "sub_step_number": "4.4",
+          "sub_step_title": "Open Account Type Popup",
+          "action": "User clicks the Account Type Dropdown to open the popup table.",
+          "navigation": "User is on the 'Commission Payment Processing' screen.",
+          "system_response": "System displays the popup table with available account types.",
+          "form_fields": [],
+          "triggering_action": "OpenAccountTypePopup",
+          "conditional_validation": "",
+          "design_elements": [
+            "Account Type Dropdown"
+          ]
+        },
+        {
+          "sub_step_number": "4.5",
+          "sub_step_title": "Select Account Type from Table",
+          "action": "User selects an account type from the table.",
+          "navigation": "User is on the 'Account Type Popup' screen.",
+          "system_response": "System updates the session variable with the selected account type code.",
+          "form_fields": [],
+          "triggering_action": "SelectAccountType",
+          "conditional_validation": "",
+          "design_elements": [
+            "Account Type Table"
+          ]
+        },
+        {
+          "sub_step_number": "4.6",
+          "sub_step_title": "Close Account Type Popup",
+          "action": "User closes the account type popup.",
+          "navigation": "User is on the 'Account Type Popup' screen.",
+          "system_response": "System closes the popup and returns the user to the 'Commission Payment Processing' screen.",
+          "form_fields": [],
+          "triggering_action": "CloseAccountTypePopup",
+          "conditional_validation": "",
+          "design_elements": [
+            "Close Button (Popup)"
+          ]
+        },
+        {
+          "sub_step_number": "4.7",
+          "sub_step_title": "Open Agent Popup",
+          "action": "User clicks the Agent Dropdown to open the popup table.",
+          "navigation": "User is on the 'Commission Payment Processing' screen.",
+          "system_response": "System displays the popup table with available agents/brokers.",
+          "form_fields": [],
+          "triggering_action": "OpenAgentPopup",
+          "conditional_validation": "",
+          "design_elements": [
+            "Agent Dropdown"
+          ]
+        },
+        {
+          "sub_step_number": "4.8",
+          "sub_step_title": "Select Agent from Table",
+          "action": "User selects an agent/broker from the table.",
+          "navigation": "User is on the 'Agent Popup' screen.",
+          "system_response": "System updates the session variable with the selected agent code.",
+          "form_fields": [],
+          "triggering_action": "SelectAgent",
+          "conditional_validation": "",
+          "design_elements": [
+            "Agent Table"
+          ]
+        },
+        {
+          "sub_step_number": "4.9",
+          "sub_step_title": "Close Agent Popup",
+          "action": "User closes the agent popup.",
+          "navigation": "User is on the 'Agent Popup' screen.",
+          "system_response": "System closes the popup and returns the user to the 'Commission Payment Processing' screen.",
+          "form_fields": [],
+          "triggering_action": "CloseAgentPopup",
+          "conditional_validation": "",
+          "design_elements": [
+            "Close Button (Popup)"
+          ]
+        }
+      ]
+    },
+    {
+      "step_number": 5,
+      "step_title": "Select Receipts",
+      "action": "User selects the receipts to process commissions. (Can select all, unselect all, or individual receipts).",
+      "navigation": "User is on the 'Receipt Installments' screen.",
+      "system_response": "System displays the table of receipt installments and allows the user to select records.",
+      "form_fields": [],
+      "triggering_action": "SelectReceipts",
+      "conditional_validation": "",
+      "design_elements": [
+        "Receipt Installments Table",
+        "Select All Button",
+        "Un-select All Button",
+        "Pay Checkbox (Individual Receipts)"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "5.1",
+          "sub_step_title": "Select All Receipts",
+          "action": "User clicks the 'Select All' button.",
+          "navigation": "User is on the 'Receipt Installments' screen.",
+          "system_response": "System selects all receipts in the table.",
+          "form_fields": [],
+          "triggering_action": "SelectAllReceipts",
+          "conditional_validation": "",
+          "design_elements": [
+            "Select All Button"
+          ]
+        },
+        {
+          "sub_step_number": "5.2",
+          "sub_step_title": "Unselect All Receipts",
+          "action": "User clicks the 'Un-select All' button.",
+          "navigation": "User is on the 'Receipt Installments' screen.",
+          "system_response": "System unselects all receipts in the table.",
+          "form_fields": [],
+          "triggering_action": "UnselectAllReceipts",
+          "conditional_validation": "",
+          "design_elements": [
+            "Unselect All Button"
+          ]
+        },
+        {
+          "sub_step_number": "5.3",
+          "sub_step_title": "Select Individual Receipts",
+          "action": "User clicks the 'Pay' checkbox for individual receipts.",
+          "navigation": "User is on the 'Receipt Installments' screen.",
+          "system_response": "System marks the selected receipts.",
+          "form_fields": [],
+          "triggering_action": "SelectIndividualReceipts",
+          "conditional_validation": "",
+          "design_elements": [
+            "Pay Checkbox"
+          ]
+        }
+      ]
+    },
+    {
+      "step_number": 6,
+      "step_title": "Choose Payment Method",
+      "action": "User selects the desired payment method (CHQ, EFT, or MFT).",
+      "navigation": "User is on the 'Receipt Installments' screen.",
+      "system_response": "System displays the payment method dropdown and updates the UI based on the selected option.",
+      "form_fields": [],
+      "triggering_action": "SelectPayMethod",
+      "conditional_validation": "",
+      "design_elements": [
+        "Pay Method Dropdown"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "6.1",
+          "sub_step_title": "Update UI based on Payment Method Selection",
+          "action": "System dynamically updates the UI elements based on the selected payment method (e.g., show/hide additional fields for MFT or EFT).",
+          "navigation": "User is on the 'Receipt Installments' screen.",
+          "system_response": "The UI adjusts based on the payment method selected.",
+          "form_fields": [],
+          "triggering_action": "UpdateUIForPaymentMethod",
+          "conditional_validation": "",
+          "design_elements": []
+        }
+      ]
+    },
+    {
+      "step_number": 7,
+      "step_title": "Provide Narration (Optional)",
+      "action": "User provides narration for the agent (if applicable).",
+      "navigation": "User is on the 'Receipt Installments' screen.",
+      "system_response": "System displays the narration text field and updates the session variable with the entered value.",
+      "form_fields": [
+        {
+          "field_name": "Narration",
+          "field_type": "Text Field",
+          "description": "User enters the narration."
+        }
+      ],
+      "triggering_action": "UpdateNarration",
+      "conditional_validation": "",
+      "design_elements": [
+        "Narration Text Field"
+      ]
+    },
+    {
+      "step_number": 8,
+      "step_title": "Provide MFT Details (If Applicable)",
+      "action": "User provides additional details in the 'Mobile Payment Type' popup (if MFT payment method is selected).",
+      "navigation": "User is on the 'Receipt Installments' screen.",
+      "system_response": "System displays the 'Mobile Payment Type' popup with a table of providers. User selects the desired provider and enters mobile number.",
+      "form_fields": [
+        {
+          "field_name": "Mobile Number",
+          "field_type": "Text Field",
+          "description": "User enters the mobile number."
+        },
+        {
+          "field_name": "Provider",
+          "field_type": "Dropdown",
+          "description": "User selects the provider from a popup table."
+        }
+      ],
+      "triggering_action": "SelectMFTProvider",
+      "conditional_validation": "Field is only visible if the selected payment method is 'MFT'.",
+      "design_elements": [
+        "MFT Popup",
+        "Mobile Payment Type Table"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "8.1",
+          "sub_step_title": "Select Provider from Table",
+          "action": "User selects a provider from the 'Mobile Payment Type' table.",
+          "navigation": "User is on the 'Mobile Payment Type Popup' screen.",
+          "system_response": "System updates the session variable with the selected provider code.",
+          "form_fields": [],
+          "triggering_action": "SelectProvider",
+          "conditional_validation": "",
+          "design_elements": [
+            "Mobile Payment Type Table"
+          ]
+        }
+      ]
+    },
+    {
+      "step_number": 9,
+      "step_title": "Prepare Payments",
+      "action": "User clicks the 'Prepare Payments' button.",
+      "navigation": "User is on the 'Receipt Installments' screen.",
+      "system_response": "System validates the data, prepares the commission payment, updates the UI, and transitions the ticket.",
+      "form_fields": [],
+      "triggering_action": "PrepareCommPayments",
+      "conditional_validation": "",
+      "design_elements": [
+        "Prepare Payments Button"
+      ]
+    },
+    {
+      "step_number": 10,
+      "step_title": "Supervisor Approval (IC Enabled)",
+      "action": "User selects 'Supervisor Approval' from the 'Select an Action' dropdown (if Internal Control is enabled).",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for supervisor approval and displays the table of commission payments requiring approval.",
+      "form_fields": [],
+      "triggering_action": "UpdateAction",
+      "conditional_validation": "This step is only visible if Internal Control is enabled.",
+      "design_elements": [
+        "Select an Action Dropdown",
+        "Internal Control Table",
+        "Supervisor Approval Button"
+      ]
+    },
+    {
+      "step_number": 11,
+      "step_title": "Supervisor Approves or Rejects",
+      "action": "User approves or rejects the prepared payments.",
+      "navigation": "User is on the 'Supervisor Approval' screen.",
+      "system_response": "System displays a popup with options to approve or reject, and updates the table and ticket status based on the selected option.",
+      "form_fields": [
+        {
+          "field_name": "Approve",
+          "field_type": "Dropdown",
+          "description": "User selects 'Yes' or 'No' for approval."
+        },
+        {
+          "field_name": "Remarks",
+          "field_type": "Text Field",
+          "description": "User enters remarks for the approval."
+        }
+      ],
+      "triggering_action": "ApproveICpolicies",
+      "conditional_validation": "",
+      "design_elements": [
+        "Supervisor Approval Popup",
+        "Approval Dropdown",
+        "Remarks Text Field",
+        "Save Button"
+      ]
+    },
+    {
+      "step_number": 12,
+      "step_title": "Authorize Payments",
+      "action": "User selects 'Authorize Payments' from the 'Select an Action' dropdown.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for authorizing payments and displays the table of prepared commissions.",
+      "form_fields": [],
+      "triggering_action": "UpdateAction",
+      "conditional_validation": "",
+      "design_elements": [
+        "Select an Action Dropdown",
+        "Agent Commission Payments Table",
+        "Authorize Payments Button"
+      ]
+    },
+    {
+      "step_number": 13,
+      "step_title": "Authorize Commission Payment",
+      "action": "User selects the desired commission payment and clicks the 'Authorize Payments' button.",
+      "navigation": "User is on the 'Authorize Payments' screen.",
+      "system_response": "System authorizes the selected commission payment, updates the table status, and transitions the ticket.",
+      "form_fields": [],
+      "triggering_action": "AuthoriseCommPayments",
+      "conditional_validation": "",
+      "design_elements": [
+        "Agent Commission Payments Table",
+        "Authorize Payments Button"
+      ]
+    },
+    {
+      "step_number": 14,
+      "step_title": "Payments Enquiry",
+      "action": "User selects 'Payments Enquiry' from the 'Select an Action' dropdown.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for viewing commission payments and displays the table of processed commissions.",
+      "form_fields": [],
+      "triggering_action": "UpdateAction",
+      "conditional_validation": "",
+      "design_elements": [
+        "Select an Action Dropdown",
+        "Agent Commission Payments Table"
+      ]
+    },
+    {
+      "step_number": 15,
+      "step_title": "Confirm Commission Payment in FMS",
+      "action": "User confirms that the payment has been completed in FMS by checking the box for the processed commission payment.",
+      "navigation": "User is on the 'Payments Enquiry' screen.",
+      "system_response": "System displays a confirmation message.",
+      "form_fields": [],
+      "triggering_action": "ConfirmPayment",
+      "conditional_validation": "",
+      "design_elements": [
+        "Select Checkbox",
+        "Commission Payment Completed Button"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "15.1",
+          "sub_step_title": "Display Confirmation Message",
+          "action": "System displays a confirmation message after clicking the 'Commission Payment Completed' button.",
+          "navigation": "User is on the 'Payments Enquiry' screen.",
+          "system_response": "Confirmation message is displayed.",
+          "form_fields": [],
+          "triggering_action": "DisplayConfirmation",
+          "conditional_validation": "",
+          "design_elements": []
+        }
+      ]
+    },
+    {
+      "step_number": 16,
+      "step_title": "Generate Requisition Form",
+      "action": "User selects the desired format for the requisition form and clicks the 'Generate Requisition Form' button.",
+      "navigation": "User is on the 'Payments Enquiry' screen.",
+      "system_response": "System generates the requisition form in the selected format and downloads it.",
+      "form_fields": [
+        {
+          "field_name": "Report Format",
+          "field_type": "Dropdown",
+          "description": "User selects the desired report format (PDF, HTML, XLS, RTF)."
+        }
+      ],
+      "triggering_action": "GenerateRequisition",
+      "conditional_validation": "",
+      "design_elements": [
+        "Report Format Dropdown",
+        "Generate Requisition Form Button"
+      ]
+    },
+    {
+      "step_number": 17,
+      "step_title": "Dispatch Commission",
+      "action": "User clicks the 'Commission Dispatched' button.",
+      "navigation": "User is on the 'Payments Enquiry' screen.",
+      "system_response": "System displays a confirmation message 'Commission Statement Successfully Dispatched'.",
+      "form_fields": [],
+      "triggering_action": "DispatchCommission",
+      "conditional_validation": "",
+      "design_elements": [
+        "Commission Dispatched Button"
+      ]
+    },
+    {
+      "step_number": 18,
+      "step_title": "Reverse Commission Payment",
+      "action": "User selects 'Authorised Payments Reversals' from the 'Select an Action' dropdown.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for reversing authorized payments and displays the table of authorized commissions.",
+      "form_fields": [],
+      "triggering_action": "UpdateAction",
+      "conditional_validation": "",
+      "design_elements": [
+        "Select an Action Dropdown",
+        "Agent Commission Payments Table",
+        "Reverse Button"
+      ]
+    },
+    {
+      "step_number": 19,
+      "step_title": "Confirm Reversal",
+      "action": "User selects the authorized commission payment to reverse and clicks the 'Reverse' button.",
+      "navigation": "User is on the 'Authorised Payments Reversals' screen.",
+      "system_response": "System displays a confirmation popup 'Are you sure you want to contra the Transaction?'.",
+      "form_fields": [],
+      "triggering_action": "InitiateReverseAllocation",
+      "conditional_validation": "",
+      "design_elements": [
+        "Select Checkbox",
+        "Reverse Button",
+        "Confirmation Popup"
+      ]
+    },
+    {
+      "step_number": 20,
+      "step_title": "Process Commission Reversal",
+      "action": "User clicks 'Ok' to confirm the reversal.",
+      "navigation": "User is on the 'Confirmation Popup' screen.",
+      "system_response": "System reverses the commission payment and updates the table accordingly.",
+      "form_fields": [],
+      "triggering_action": "ConfirmContraTrans",
+      "conditional_validation": "",
+      "design_elements": [
+        "Ok Button"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "20.1",
+          "sub_step_title": "Reverse Commission Payment",
+          "action": "System reverses the selected commission payment.",
+          "navigation": "User is on the 'Confirmation Popup' screen.",
+          "system_response": "The reversal is processed in the backend.",
+          "form_fields": [],
+          "triggering_action": "ReversePayment",
+          "conditional_validation": "",
+          "design_elements": []
+        },
+        {
+          "sub_step_number": "20.2",
+          "sub_step_title": "Update Table Status",
+          "action": "System updates the 'Agent Commission Payments' table to reflect the reversed status of the payment.",
+          "navigation": "User is on the 'Confirmation Popup' screen.",
+          "system_response": "The table is updated with the reversal information.",
+          "form_fields": [],
+          "triggering_action": "UpdateTableStatus",
+          "conditional_validation": "",
+          "design_elements": []
+        }
+      ]
+    },
+    {
+      "step_number": 21,
+      "step_title": "Authorize Commission Reversal (If Applicable)",
+      "action": "User navigates to the 'Authorize Commission Reversal' transaction (if applicable) and clicks the 'Process' button.",
+      "navigation": "User is on the 'Home Screen' (or a specific transaction screen).",
+      "system_response": "System renders the UI for authorizing the reversal and displays the table of reversed commissions.",
+      "form_fields": [],
+      "triggering_action": "ProcessTask",
+      "conditional_validation": "This step is only applicable if the system requires further authorization for the reversal.",
+      "design_elements": [
+        "Process Button",
+        "Commission Reversals Table"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "21.1",
+          "sub_step_title": "Render UI for Authorization",
+          "action": "System renders the UI for authorizing the commission reversal, including the necessary table and buttons.",
+          "navigation": "User is on the 'Home Screen' (or a specific transaction screen).",
+          "system_response": "The UI for authorizing the reversal is displayed.",
+          "form_fields": [],
+          "triggering_action": "RenderAuthorizationUI",
+          "conditional_validation": "",
+          "design_elements": []
+        },
+        {
+          "sub_step_number": "21.2",
+          "sub_step_title": "Display Commission Reversal Table",
+          "action": "System displays the table of reversed commissions.",
+          "navigation": "User is on the 'Authorize Commission Reversal' screen.",
+          "system_response": "The table of reversed commissions is displayed.",
+          "form_fields": [],
+          "triggering_action": "DisplayReversalTable",
+          "conditional_validation": "",
+          "design_elements": []
+        }
+      ]
+    },
+    {
+      "step_number": 22,
+      "step_title": "Authorize Commission Reversal",
+      "action": "User selects the commission reversal and clicks the 'Authorise Reversal' button.",
+      "navigation": "User is on the 'Authorize Commission Reversal' screen.",
+      "system_response": "System authorizes the reversal, updates the table status, and transitions the ticket.",
+      "form_fields": [],
+      "triggering_action": "authoriseCommReversal",
+      "conditional_validation": "",
+      "design_elements": [
+        "Select Checkbox",
+        "Authorise Reversal Button"
+      ]
+    },
+    {
+      "step_number": 23,
+      "step_title": "Review Commission Statement",
+      "action": "User clicks the 'Commission Statement Reviewed' button.",
+      "navigation": "User is on the 'Commission Reversals' screen.",
+      "system_response": "System displays a confirmation message 'Commission Statement Successfully Reviewed'.",
+      "form_fields": [],
+      "triggering_action": "CommRevReviewed",
+      "conditional_validation": "",
+      "design_elements": [
+        "Commission Statement Reviewed Button"
+      ]
+    },
+    {
+      "step_number": 24,
+      "step_title": "Manage DMS Documents",
+      "action": "User selects the 'DMS Documents' tab.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for managing DMS documents and displays the table of documents.",
+      "form_fields": [],
+      "triggering_action": "Navigation",
+      "conditional_validation": "",
+      "design_elements": [
+        "DMS Documents Tab",
+        "DMS Documents Table"
+      ]
+    },
+    {
+      "step_number": 25,
+      "step_title": "Upload DMS Document",
+      "action": "User clicks the 'Upload New File' button.",
+      "navigation": "User is on the 'DMS Documents' screen.",
+      "system_response": "System displays a popup for document upload.",
+      "form_fields": [],
+      "triggering_action": "newDmsDoc",
+      "conditional_validation": "",
+      "design_elements": [
+        "Upload New File Button",
+        "DMS Upload Popup"
+      ]
+    },
+    {
+      "step_number": 26,
+      "step_title": "Select Document Type",
+      "action": "User selects the document type from the dropdown.",
+      "navigation": "User is on the 'DMS Upload Popup' screen.",
+      "system_response": "System updates the UI based on the selected document type.",
+      "form_fields": [],
+      "triggering_action": "DocTypeSelectionChanged",
+      "conditional_validation": "",
+      "design_elements": [
+        "Document Type Dropdown"
+      ]
+    },
+    {
+      "step_number": 27,
+      "step_title": "Choose File to Upload",
+      "action": "User chooses the file to upload.",
+      "navigation": "User is on the 'DMS Upload Popup' screen.",
+      "system_response": "System displays the file upload input field.",
+      "form_fields": [],
+      "triggering_action": "ChooseFile",
+      "conditional_validation": "",
+      "design_elements": [
+        "File Upload Input Field"
+      ]
+    },
+    {
+      "step_number": 28,
+      "step_title": "Upload Document",
+      "action": "User clicks the 'Save' button.",
+      "navigation": "User is on the 'DMS Upload Popup' screen.",
+      "system_response": "System validates the file and uploads it to the DMS system. The system displays a message 'Record Saved Successfully!' or an error message if the upload fails.",
+      "form_fields": [],
+      "triggering_action": "upLoadDocToDms",
+      "conditional_validation": "",
+      "design_elements": [
+        "Save Button"
+      ]
+    },
+    {
+      "step_number": 29,
+      "step_title": "Refresh DMS Documents",
+      "action": "User clicks the 'Refresh' button.",
+      "navigation": "User is on the 'DMS Documents' screen.",
+      "system_response": "System updates the DMS document table with the latest documents.",
+      "form_fields": [],
+      "triggering_action": "RefreshDms",
+      "conditional_validation": "",
+      "design_elements": [
+        "Refresh Button"
+      ]
+    },
+    {
+      "step_number": 30,
+      "step_title": "View DMS Document",
+      "action": "User selects a document from the table and clicks the '[View]' button.",
+      "navigation": "User is on the 'DMS Documents' screen.",
+      "system_response": "System opens a popup to display the document in an iframe.",
+      "form_fields": [],
+      "triggering_action": "generateDoc",
+      "conditional_validation": "",
+      "design_elements": [
+        "View Button",
+        "Document Viewer Popup"
+      ]
+    },
+    {
+      "step_number": 31,
+      "step_title": "Download DMS Document",
+      "action": "User clicks the '[DownLoad]' button.",
+      "navigation": "User is on the 'DMS Documents' screen.",
+      "system_response": "System downloads the selected document.",
+      "form_fields": [],
+      "triggering_action": "generateDoc",
+      "conditional_validation": "",
+      "design_elements": [
+        "Download Button"
+      ]
+    },
+    {
+      "step_number": 32,
+      "step_title": "Delete DMS Document",
+      "action": "User clicks the 'Delete' button.",
+      "navigation": "User is on the 'DMS Documents' screen.",
+      "system_response": "System displays a confirmation popup 'Are you sure you want to delete this record?'",
+      "form_fields": [],
+      "triggering_action": "initiateDmsDocDelete",
+      "conditional_validation": "",
+      "design_elements": [
+        "Delete Button",
+        "Confirmation Popup"
+      ]
+    },
+    {
+      "step_number": 33,
+      "step_title": "Confirm Deletion",
+      "action": "User clicks 'Ok' in the confirmation popup.",
+      "navigation": "User is on the 'Confirmation Popup' screen.",
+      "system_response": "System deletes the selected DMS document.",
+      "form_fields": [],
+      "triggering_action": "confirmDelete",
+      "conditional_validation": "",
+      "design_elements": [
+        "Ok Button"
+      ]
+    },
+    {
+      "step_number": 34,
+      "step_title": "Manage Internal Control Notes",
+      "action": "User selects the 'Supervisor Notes' tab.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for viewing and adding internal control notes and displays the table of notes.",
+      "form_fields": [],
+      "triggering_action": "Navigation",
+      "conditional_validation": "This step is only visible if Internal Control is enabled.",
+      "design_elements": [
+        "Supervisor Notes Tab",
+        "Internal Control Notes Table"
+      ]
+    },
+    {
+      "step_number": 35,
+      "step_title": "Add Internal Control Notes",
+      "action": "User clicks the 'Add Notes' button.",
+      "navigation": "User is on the 'Supervisor Notes' screen.",
+      "system_response": "System displays a popup to enter remarks and select the approval status.",
+      "form_fields": [],
+      "triggering_action": "showIntControlPopup",
+      "conditional_validation": "",
+      "design_elements": [
+        "Add Notes Button",
+        "Internal Control Notes Popup"
+      ]
+    },
+    {
+      "step_number": 36,
+      "step_title": "Enter Notes",
+      "action": "User enters remarks in the remarks text field and selects the approval status.",
+      "navigation": "User is on the 'Internal Control Notes Popup' screen.",
+      "system_response": "System updates the UI based on the entered details.",
+      "form_fields": [
+        {
+          "field_name": "Remarks",
+          "field_type": "Text Field",
+          "description": "User enters the remarks."
+        },
+        {
+          "field_name": "Approval Status",
+          "field_type": "Dropdown",
+          "description": "User selects the approval status."
+        }
+      ],
+      "triggering_action": "UpdateNotes",
+      "conditional_validation": "",
+      "design_elements": [
+        "Remarks Text Field",
+        "Approval Status Dropdown"
+      ]
+    },
+    {
+      "step_number": 37,
+      "step_title": "Save Internal Control Notes",
+      "action": "User clicks the 'Save' button.",
+      "navigation": "User is on the 'Internal Control Notes Popup' screen.",
+      "system_response": "System saves the notes and updates the table accordingly.",
+      "form_fields": [],
+      "triggering_action": "saveInternalContolNotes",
+      "conditional_validation": "",
+      "design_elements": [
+        "Save Button"
+      ]
+    },
+    {
+      "step_number": 38,
+      "step_title": "Manage Other Expenses",
+      "action": "User selects the 'Other Expenses' tab.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for managing other expenses and displays the table of expenses.",
+      "form_fields": [],
+      "triggering_action": "Navigation",
+      "conditional_validation": "",
+      "design_elements": [
+        "Other Expenses Tab",
+        "Other Expenses Table"
+      ]
+    },
+    {
+      "step_number": 39,
+      "step_title": "Authorize Other Expense",
+      "action": "User selects an expense payment and provides payment method and bank details (if applicable).",
+      "navigation": "User is on the 'Other Expenses' screen.",
+      "system_response": "System updates the UI based on the selected payment method.",
+      "form_fields": [
+        {
+          "field_name": "Payment Method",
+          "field_type": "Dropdown",
+          "description": "User selects the payment method."
+        },
+        {
+          "field_name": "Bank Account Number",
+          "field_type": "Text Field",
+          "description": "User enters the bank account number (if applicable)."
+        },
+        {
+          "field_name": "Bank",
+          "field_type": "Dropdown",
+          "description": "User selects the bank from a popup table (if applicable)."
+        }
+      ],
+      "triggering_action": "SelectPaymentDetails",
+      "conditional_validation": "",
+      "design_elements": [
+        "Payment Method Dropdown",
+        "Bank Account Number Field",
+        "Bank Popup"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "39.1",
+          "sub_step_title": "Update UI based on Payment Method Selection",
+          "action": "System dynamically updates the UI elements based on the selected payment method (e.g., show/hide additional fields for EFT or MFT).",
+          "navigation": "User is on the 'Other Expenses' screen.",
+          "system_response": "The UI adjusts based on the payment method selected.",
+          "form_fields": [],
+          "triggering_action": "UpdateUIForPaymentMethod",
+          "conditional_validation": "",
+          "design_elements": []
+        },
+        {
+          "sub_step_number": "39.2",
+          "sub_step_title": "Select Bank from Popup",
+          "action": "User selects the bank from the popup table.",
+          "navigation": "User is on the 'Bank Popup' screen.",
+          "system_response": "System updates the session variable with the selected bank code.",
+          "form_fields": [],
+          "triggering_action": "SelectBank",
+          "conditional_validation": "This sub-step is only applicable if the selected payment method requires bank selection.",
+          "design_elements": [
+            "Bank Table"
+          ]
+        }
+      ]
+    },
+    {
+      "step_number": 40,
+      "step_title": "Authorize Other Expense Payment",
+      "action": "User clicks the 'Authorize' button.",
+      "navigation": "User is on the 'Other Expenses' screen.",
+      "system_response": "System authorizes the expense payment and updates the table status.",
+      "form_fields": [],
+      "triggering_action": "authExpensePayments",
+      "conditional_validation": "",
+      "design_elements": [
+        "Authorize Button"
+      ]
+    },
+    {
+      "step_number": 41,
+      "step_title": "Manage Admin Charges",
+      "action": "User selects the 'Admin Charge' tab.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for managing admin charges and displays the table of admin charge payments.",
+      "form_fields": [],
+      "triggering_action": "Navigation",
+      "conditional_validation": "",
+      "design_elements": [
+        "Admin Charge Tab",
+        "Admin Charge Table"
+      ]
+    },
+    {
+      "step_number": 42,
+      "step_title": "Authorize Admin Charge",
+      "action": "User selects an admin charge payment and provides payment method and bank details (if applicable).",
+      "navigation": "User is on the 'Admin Charge' screen.",
+      "system_response": "System updates the UI based on the selected payment method.",
+      "form_fields": [
+        {
+          "field_name": "Payment Method",
+          "field_type": "Dropdown",
+          "description": "User selects the payment method."
+        },
+        {
+          "field_name": "Bank Account Number",
+          "field_type": "Text Field",
+          "description": "User enters the bank account number (if applicable)."
+        },
+        {
+          "field_name": "Bank",
+          "field_type": "Dropdown",
+          "description": "User selects the bank from a popup table (if applicable)."
+        }
+      ],
+      "triggering_action": "SelectPaymentDetails",
+      "conditional_validation": "",
+      "design_elements": [
+        "Payment Method Dropdown",
+        "Bank Account Number Field",
+        "Bank Popup"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "42.1",
+          "sub_step_title": "Update UI based on Payment Method Selection",
+          "action": "System dynamically updates the UI elements based on the selected payment method (e.g., show/hide additional fields for EFT or MFT).",
+          "navigation": "User is on the 'Admin Charge' screen.",
+          "system_response": "The UI adjusts based on the payment method selected.",
+          "form_fields": [],
+          "triggering_action": "UpdateUIForPaymentMethod",
+          "conditional_validation": "",
+          "design_elements": []
+        },
+        {
+          "sub_step_number": "42.2",
+          "sub_step_title": "Select Bank from Popup",
+          "action": "User selects the bank from the popup table.",
+          "navigation": "User is on the 'Bank Popup' screen.",
+          "system_response": "System updates the session variable with the selected bank code.",
+          "form_fields": [],
+          "triggering_action": "SelectBank",
+          "conditional_validation": "This sub-step is only applicable if the selected payment method requires bank selection.",
+          "design_elements": [
+            "Bank Table"
+          ]
+        }
+      ]
+    },
+    {
+      "step_number": 43,
+      "step_title": "Authorize Admin Charge Payment",
+      "action": "User clicks the 'Authorize' button.",
+      "navigation": "User is on the 'Admin Charge' screen.",
+      "system_response": "System authorizes the admin charge payment and updates the table status.",
+      "form_fields": [],
+      "triggering_action": "authAdminPayments",
+      "conditional_validation": "",
+      "design_elements": [
+        "Authorize Button"
+      ]
+    },
+    {
+      "step_number": 44,
+      "step_title": "Edit Facultative Refunds",
+      "action": "User selects the 'Facultative Refund' tab.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for managing facultative refunds and displays the table of refunds.",
+      "form_fields": [],
+      "triggering_action": "Navigation",
+      "conditional_validation": "",
+      "design_elements": [
+        "Facultative Refund Tab",
+        "Facultative Refund Table"
+      ]
+    },
+    {
+      "step_number": 45,
+      "step_title": "Select Refund to Edit",
+      "action": "User selects a Facultative Refund to edit.",
+      "navigation": "User is on the 'Facultative Refund' screen.",
+      "system_response": "System displays the selected refund details.",
+      "form_fields": [],
+      "triggering_action": "SelectRefundToEdit",
+      "conditional_validation": "",
+      "design_elements": [
+        "Select Checkbox"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "45.1",
+          "sub_step_title": "Select Refund from Table",
+          "action": "User selects a specific refund from the 'Facultative Refund' table.",
+          "navigation": "User is on the 'Facultative Refund' screen.",
+          "system_response": "System highlights the selected refund.",
+          "form_fields": [],
+          "triggering_action": "SelectRefund",
+          "conditional_validation": "",
+          "design_elements": [
+            "Facultative Refund Table"
+          ]
+        }
+      ]
+    },
+    {
+      "step_number": 46,
+      "step_title": "Edit Refund Details",
+      "action": "User clicks the 'Edit' button.",
+      "navigation": "User is on the 'Facultative Refund' screen.",
+      "system_response": "System opens a popup to edit the selected refund.",
+      "form_fields": [],
+      "triggering_action": "editfacultativeRefund",
+      "conditional_validation": "",
+      "design_elements": [
+        "Edit Button",
+        "Edit Refund Popup"
+      ]
+    },
+    {
+      "step_number": 47,
+      "step_title": "Update Refund Details",
+      "action": "User edits the refund details and clicks the 'Save' button.",
+      "navigation": "User is on the 'Edit Refund Popup' screen.",
+      "system_response": "System updates the refund details and refreshes the table with the updated data.",
+      "form_fields": [],
+      "triggering_action": "saveFacRefundPaymode",
+      "conditional_validation": "",
+      "design_elements": [
+        "Edit Refund Form",
+        "Save Button"
+      ]
+    },
+    {
+      "step_number": 48,
+      "step_title": "Manage Internal Control Approvals",
+      "action": "User selects 'Supervisor Approval' from the 'Select an Action' dropdown (if Internal Control is enabled).",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for managing internal control approvals and displays the table of commission payments requiring approval.",
+      "form_fields": [],
+      "triggering_action": "UpdateAction",
+      "conditional_validation": "This step is only visible if Internal Control is enabled.",
+      "design_elements": [
+        "Select an Action Dropdown",
+        "Internal Control Table",
+        "Supervisor Approval Button"
+      ]
+    },
+    {
+      "step_number": 49,
+      "step_title": "Select Payment to Approve",
+      "action": "User selects a commission payment from the 'Internal Control' table.",
+      "navigation": "User is on the 'Internal Control' screen.",
+      "system_response": "System highlights the selected payment for approval.",
+      "form_fields": [],
+      "triggering_action": "SelectPaymentForApproval",
+      "conditional_validation": "",
+      "design_elements": [
+        "Internal Control Table",
+        "Select Checkbox"
+      ]
+    },
+    {
+      "step_number": 50,
+      "step_title": "Approve or Reject Payment",
+      "action": "User clicks the 'Supervisor Approval' button.",
+      "navigation": "User is on the 'Internal Control' screen.",
+      "system_response": "System checks user rights and displays a popup to approve or reject the selected payment.",
+      "form_fields": [],
+      "triggering_action": "showAproveIControlPopups",
+      "conditional_validation": "",
+      "design_elements": [
+        "Supervisor Approval Button",
+        "Supervisor Approval Popup"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "50.1",
+          "sub_step_title": "Check User Rights",
+          "action": "System checks if the user has the necessary rights to perform the supervisor approval action.",
+          "navigation": "User is on the 'Internal Control' screen.",
+          "system_response": "System verifies user permissions.",
+          "form_fields": [],
+          "triggering_action": "CheckInternalContolRights",
+          "conditional_validation": "",
+          "design_elements": []
+        },
+        {
+          "sub_step_number": "50.2",
+          "sub_step_title": "Display Approval Popup",
+          "action": "System displays a popup with options to approve or reject the selected payment.",
+          "navigation": "User is on the 'Supervisor Approval' screen.",
+          "system_response": "The approval popup is displayed.",
+          "form_fields": [],
+          "triggering_action": "DisplayApprovalPopup",
+          "conditional_validation": "",
+          "design_elements": []
+        }
+      ]
+    },
+    {
+      "step_number": 51,
+      "step_title": "Provide Approval Details",
+      "action": "User selects 'Yes' or 'No' from the approval dropdown and enters remarks.",
+      "navigation": "User is on the 'Supervisor Approval Popup' screen.",
+      "system_response": "System updates the UI based on the selected options.",
+      "form_fields": [
+        {
+          "field_name": "Approve",
+          "field_type": "Dropdown",
+          "description": "User selects 'Yes' or 'No' for approval."
+        },
+        {
+          "field_name": "Remarks",
+          "field_type": "Text Field",
+          "description": "User enters remarks for the approval."
+        }
+      ],
+      "triggering_action": "UpdateApprovalDetails",
+      "conditional_validation": "",
+      "design_elements": [
+        "Approval Dropdown",
+        "Remarks Text Field"
+      ]
+    },
+    {
+      "step_number": 52,
+      "step_title": "Save Approval",
+      "action": "User clicks the 'Save' button.",
+      "navigation": "User is on the 'Supervisor Approval Popup' screen.",
+      "system_response": "System saves the approval and updates the table accordingly. It also transitions the ticket based on the approval status.",
+      "form_fields": [],
+      "triggering_action": "approveICpolicies",
+      "conditional_validation": "",
+      "design_elements": [
+        "Save Button"
+      ]
+    },
+    {
+      "step_number": 53,
+      "step_title": "Manage Internal Control Approvals (Maker-Checker)",
+      "action": "User clicks the 'Supervisor Approval' button if the 'Supervisor Maker checker' setting is enabled.",
+      "navigation": "User is on the 'Internal Control' screen.",
+      "system_response": "System checks for maker-checker restrictions and displays a popup to select the user who will approve the payment.",
+      "form_fields": [],
+      "triggering_action": "showAproveIControlPopups",
+      "conditional_validation": "This step is only applicable if the 'Supervisor Maker checker' setting is enabled.",
+      "design_elements": [
+        "Supervisor Approval Button",
+        "Select User Popup"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "53.1",
+          "sub_step_title": "Check Maker-Checker Restrictions",
+          "action": "System checks if the user who prepared the commission payment can also approve it.",
+          "navigation": "User is on the 'Internal Control' screen.",
+          "system_response": "System verifies maker-checker rules.",
+          "form_fields": [],
+          "triggering_action": "CheckInternalContolRights",
+          "conditional_validation": "",
+          "design_elements": []
+        },
+        {
+          "sub_step_number": "53.2",
+          "sub_step_title": "Display Select User Popup",
+          "action": "System displays a popup with a table of available users to select the approver.",
+          "navigation": "User is on the 'Internal Control' screen.",
+          "system_response": "The Select User Popup is displayed.",
+          "form_fields": [],
+          "triggering_action": "DisplaySelectUserPopup",
+          "conditional_validation": "",
+          "design_elements": []
+        }
+      ]
+    },
+    {
+      "step_number": 54,
+      "step_title": "Select User to Approve",
+      "action": "User selects the approver from the 'Select User' popup table.",
+      "navigation": "User is on the 'Select User Popup' screen.",
+      "system_response": "System updates the session variable with the selected user ID.",
+      "form_fields": [],
+      "triggering_action": "setTcktUserListener",
+      "conditional_validation": "",
+      "design_elements": [
+        "Select User Table"
+      ]
+    },
+    {
+      "step_number": 55,
+      "step_title": "Assign Approval Task",
+      "action": "User clicks the 'OK' button in the 'Select User Popup'.",
+      "navigation": "User is on the 'Select User Popup' screen.",
+      "system_response": "System assigns the approval task to the selected user and redirects the user to the main application screen.",
+      "form_fields": [],
+      "triggering_action": "assignICTask",
+      "conditional_validation": "",
+      "design_elements": [
+        "Ok Button"
+      ]
+    },
+    {
+      "step_number": 56,
+      "step_title": "Manage Other Expenses (Optional)",
+      "action": "User selects the 'Other Expenses' tab.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for managing other expenses and displays the table of expenses.",
+      "form_fields": [],
+      "triggering_action": "Navigation",
+      "conditional_validation": "",
+      "design_elements": [
+        "Other Expenses Tab",
+        "Other Expenses Table"
+      ]
+    },
+    {
+      "step_number": 57,
+      "step_title": "Edit Other Expense Payment (Optional)",
+      "action": "User selects an expense payment to edit and updates the bank account information.",
+      "navigation": "User is on the 'Other Expenses' screen.",
+      "system_response": "System displays the selected expense details.",
+      "form_fields": [
+        {
+          "field_name": "Bank Account Number",
+          "field_type": "Text Field",
+          "description": "User enters the updated bank account number."
+        },
+        {
+          "field_name": "Bank",
+          "field_type": "Dropdown",
+          "description": "User selects the updated bank from the popup table."
+        }
+      ],
+      "triggering_action": "SelectPaymentDetails",
+      "conditional_validation": "This step is only applicable if the user needs to update bank account information for the expense payment.",
+      "design_elements": [
+        "Select Checkbox",
+        "Bank Account Number Field",
+        "Bank Popup"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "57.1",
+          "sub_step_title": "Select Bank from Popup",
+          "action": "User selects the bank from the popup table.",
+          "navigation": "User is on the 'Bank Popup' screen.",
+          "system_response": "System updates the session variable with the selected bank code.",
+          "form_fields": [],
+          "triggering_action": "SelectBank",
+          "conditional_validation": "",
+          "design_elements": [
+            "Bank Table"
+          ]
+        }
+      ]
+    },
+    {
+      "step_number": 58,
+      "step_title": "Save Expense Payment Updates",
+      "action": "User clicks the 'Save' button.",
+      "navigation": "User is on the 'Other Expenses' screen.",
+      "system_response": "System saves the updated bank details and refreshes the table.",
+      "form_fields": [],
+      "triggering_action": "updateExpBankAccount",
+      "conditional_validation": "",
+      "design_elements": [
+        "Save Button"
+      ]
+    },
+    {
+      "step_number": 59,
+      "step_title": "Manage Admin Charges (Optional)",
+      "action": "User selects the 'Admin Charge' tab.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for managing admin charges and displays the table of admin charge payments.",
+      "form_fields": [],
+      "triggering_action": "Navigation",
+      "conditional_validation": "",
+      "design_elements": [
+        "Admin Charge Tab",
+        "Admin Charge Table"
+      ]
+    },
+    {
+      "step_number": 60,
+      "step_title": "Edit Admin Charge Payment (Optional)",
+      "action": "User selects an admin charge payment to edit and updates the bank account information.",
+      "navigation": "User is on the 'Admin Charge' screen.",
+      "system_response": "System displays the selected admin charge details.",
+      "form_fields": [
+        {
+          "field_name": "Bank Account Number",
+          "field_type": "Text Field",
+          "description": "User enters the updated bank account number."
+        },
+        {
+          "field_name": "Bank",
+          "field_type": "Dropdown",
+          "description": "User selects the updated bank from the popup table."
+        }
+      ],
+      "triggering_action": "SelectPaymentDetails",
+      "conditional_validation": "This step is only applicable if the user needs to update bank account information for the admin charge payment.",
+      "design_elements": [
+        "Select Checkbox",
+        "Bank Account Number Field",
+        "Bank Popup"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "60.1",
+          "sub_step_title": "Select Bank from Popup",
+          "action": "User selects the bank from the popup table.",
+          "navigation": "User is on the 'Bank Popup' screen.",
+          "system_response": "System updates the session variable with the selected bank code.",
+          "form_fields": [],
+          "triggering_action": "SelectBank",
+          "conditional_validation": "",
+          "design_elements": [
+            "Bank Table"
+          ]
+        }
+      ]
+    },
+    {
+      "step_number": 61,
+      "step_title": "Save Admin Charge Payment Updates",
+      "action": "User clicks the 'Save' button.",
+      "navigation": "User is on the 'Admin Charge' screen.",
+      "system_response": "System saves the updated bank details and refreshes the table.",
+      "form_fields": [],
+      "triggering_action": "updateExpBankAccount",
+      "conditional_validation": "",
+      "design_elements": [
+        "Save Button"
+      ]
+    },
+    {
+      "step_number": 62,
+      "step_title": "Manage Facultative Refunds (Optional)",
+      "action": "User selects the 'Facultative Refund' tab.",
+      "navigation": "User is on the 'Commission Payment Processing' screen.",
+      "system_response": "System renders the UI for managing facultative refunds and displays the table of refunds.",
+      "form_fields": [],
+      "triggering_action": "Navigation",
+      "conditional_validation": "",
+      "design_elements": [
+        "Facultative Refund Tab",
+        "Facultative Refund Table"
+      ]
+    },
+    {
+      "step_number": 63,
+      "step_title": "Edit Facultative Refund (Optional)",
+      "action": "User selects a Facultative Refund to edit and updates the bank account information.",
+      "navigation": "User is on the 'Facultative Refund' screen.",
+      "system_response": "System displays the selected refund details.",
+      "form_fields": [
+        {
+          "field_name": "Bank Account Number",
+          "field_type": "Text Field",
+          "description": "User enters the updated bank account number."
+        },
+        {
+          "field_name": "Bank",
+          "field_type": "Dropdown",
+          "description": "User selects the updated bank from the popup table."
+        }
+      ],
+      "triggering_action": "SelectPaymentDetails",
+      "conditional_validation": "This step is only applicable if the user needs to update bank account information for the facultative refund.",
+      "design_elements": [
+        "Select Checkbox",
+        "Bank Account Number Field",
+        "Bank Popup"
+      ],
+      "sub_steps": [
+        {
+          "sub_step_number": "63.1",
+          "sub_step_title": "Select Bank from Popup",
+          "action": "User selects the bank from the popup table.",
+          "navigation": "User is on the 'Bank Popup' screen.",
+          "system_response": "System updates the session variable with the selected bank code.",
+          "form_fields": [],
+          "triggering_action": "SelectBank",
+          "conditional_validation": "",
+          "design_elements": [
+            "Bank Table"
+          ]
+        }
+      ]
+    },
+    {
+      "step_number": 64,
+      "step_title": "Save Facultative Refund Updates",
+      "action": "User clicks the 'Save' button.",
+      "navigation": "User is on the 'Facultative Refund' screen.",
+      "system_response": "System saves the updated bank details and refreshes the table.",
+      "form_fields": [],
+      "triggering_action": "updateExpBankAccount",
+      "conditional_validation": "",
+      "design_elements": [
+        "Save Button"
+      ]
+    }
+  ]
+}
